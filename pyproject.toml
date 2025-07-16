@@ -1,7 +1,7 @@
 [project]
 name = "broken-link-checker"
 version = "0.1.1"
-description = "Add your description here"
+description = "Check the broken links on a website"
 readme = "README.md"
 authors = [
     { name = "Darix SAMANI SIEWE", email = "samanidarix@gmail.com" }
