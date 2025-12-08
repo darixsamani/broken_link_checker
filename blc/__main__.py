@@ -34,7 +34,7 @@ def load_config(config_file: str) -> dict:
 @app.command()
 def main(
     host: Optional[str] = typer.Option(None, help="Eg: http://example.com"),
-    delay: Optional[float] = typer.Option(None, help="Delay between requests"),
+    delay: Optional[float] = typer.Option(None, "--delay", "-d", help="Delay between requests"),
     sender: Optional[str] = typer.Option(None, help="Email used to send report"),
     password: Optional[str] = typer.Option(None, help="Password for email login"),
     smtp_server: Optional[str] = typer.Option(None, help="SMTP server to send report"),
