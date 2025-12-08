@@ -3,8 +3,8 @@ import logging
 import sys
 from configparser import ConfigParser
 from typing import Optional
-from checker import Checker  # Assuming existing module
-from notifier import Notifier  # Assuming existing module
+from .checker import Checker  # Assuming existing module
+from .notifier import Notifier  # Assuming existing module
 
 app = typer.Typer()
 
@@ -61,7 +61,7 @@ def main(
 
     # parse values from a configuration file if provided and use those as the
     # default values for the argparse arguments
-    
+
     if config_file:
         typer.echo("Loading configuration file...")
         loaded = load_config(config_file)
@@ -70,6 +70,7 @@ def main(
         for k, v in loaded.items():
             if k in defaults and defaults[k] is None:
                 defaults[k] = v
+        #typer.echo(defaults)
 
     if not defaults['host']:
         typer.echo("Error: host is required", err=True)
